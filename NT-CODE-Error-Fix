@@ -1,0 +1,37 @@
+Tut-1
+
+First off, big THANKS to the OP (netmsm) and other people who contributed to this thread and made this guide very clear and useful!
+
+So, after perusing this thread for a long time, trying to understand the ins and outs of the process and any possible snafus, I decided to take the plunge after the Open_CA A12 (40a) got released recently, and to flash it onto my G8 originally from US Cellular. The crossflash went smoothly with no issues at all. A nice surprise was that the BL remained unlocked - I was prepared to go through the whole unlocking process again before rooting, but didn't have to. I got the empty S/N (easy fix), and the infamous NT-Code error. This is where I got stuck for a while. I tried fixing it by editing the cust_path_mapping.cfg file as suggested in the thread. The problem is that I couldn't save the changes in that stupid file by using ANY root explorer/editor! :mad: Tried half a dozen different apps with no luck at all. BTW, anyone has any ideas what I may have been doing wrong?? Yes, I am properly rooted with Magisk.
+
+Anyway... Everything worked fine on the phone, but that lame error was really getting under my skin - I could have ignored it, but I hated not being able to get rid of it. So... After more reading, I came across some info on hex-editing the FTM partition (in a totally unrelated topic). The NT-Code in FTM binary is stored at the offset 00014000. My error message was referring to the code "FFFFFF,85". The original cust_path_mapping.cfg file (which I couldn't edit) had a line referring to "FFFFFF,82". So, having all backups available, I decided, just for the heck of it, to change the last digits of the NT-Code in the FTM partition to match the "82" listed in the file. What could go wrong? I can always restore a backup... After flashing the edited FTM in QFIL, rebooted the phone, and - bingo! The NT-Code error was gone, and the phone was still fully functional. This was my happy face after spending a good hour and a half trying to get rid of it, and finally succeeding: 😁
+
+Cheers, and thanks again for all the info!
+Click to collapse
+Thanks, netmsm and kt-froggy for the guides.
+I figured out how to remove the NT code error without root.
+You will first need a file manager that can access the root directory.
+I personally used "Solid Explorer File Manager" to access the cust_path_mapping.cfg file to read the NT-Code that came with the firmware.
+You can use the Solid Explorer File Manager to access the root directory by going to settings then scrolling down and checking the box "show root storage". You will now be able to access the root storage.
+You can access the cust_path_mapping.cfg by going to root/system/product/OP. Then open the file and note the code. Mine was FFFFFF,82=/product/OP.
+Create a backup of the FTM partition the open the FTM file with HxD app. (Make sure you have a copy of the FTM file in case something goes wrong)
+Go to line 00014000 and edit the line. depending on the phone, edit the first 2 sets of numbers/letters with 3 characters separated by a comma. ("FFF,FFF), then the last set of numbers/letters with 2 characters to match the code in the cust_path_mapping.cfg file.
+(Mine was
+"2","310,120,FFFFFFFF,FFFFFFFF,FF","312,530,FFFFFFFF,FFFFFFFF,FF" and I changed to
+"2","FFF,FFF,FFFFFFFF,FFFFFFFF,82","FFF,FFF,FFFFFFFF,FFFFFFFF,82") because I was getting NT code error
+310120, 312530 ; FF, FF
+
+
+
+Note:
+1. The line could span from 00014000 to 00014040 like mine. Each line is separated with "". I had 2 lines and had to change both lines. You can have only 1 line
+2. Make sure you don't delete the line but just select the content and overwrite it with new text. deleting might affect other lines below with content. ( I deleted some lines and my phone factory reset)
+
+After that just save the FTM and load it to your phone using QFIL and the error will be gone.
+
+
+
+TUT-2
+
+
+I've only tested it on my LG G8, OPEN CA firmware so I'm not sure if it will work on others.
