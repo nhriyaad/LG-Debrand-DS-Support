@@ -73,6 +73,33 @@ C)
 6. If you are in Sprint or other platforms you will get the message whether to change the model or not. Of course you know what to do =)
 
 after completing the process it will boot up in some minutes and before starting the customization it will do one restart. just be patient.
+**NT ERROR:**
+Might help someone with NT-Code problem
+(I'm not an expert or anything, just a dumdum who happened to fix his problem, hopefully yours too)
+I AM NOT RESPONSIBLE FOR ANY HARM TO YOUR PHONE!
+am also not sure if a tutorial like this already exists, or this is a common knowledge for everyone else
+I can't find something similar.. again.. just a dumdum :D
+
+**ROOT NEEDED**
+this is presuming you're already rooted (the app used needs root permission)
+you'll need Solid Explorer app, give it permission (I think you can use other root explorer but this is what worked for me)
+
+I experimented and just added a Line on
+cust_path_mapping.cfg in the folder **/system/product/OP**
+![image](https://github.com/user-attachments/assets/cb080e68-d00e-48b0-b27f-46d9b36f78c7)
+
+
+the line USED
+**FFFFFF,61=/product/OP**
+![image](https://github.com/user-attachments/assets/36edfb09-a414-4433-a11c-8cd80e9eeb28)
+
+^ this is the line I added (which worked for me)
+try rebooting after adding this line, and see if you still get the NT error, if not anymore.. then CONGRATULATIONS!
+if you're still getting error, then try replacing the number based on the error you're getting.
+
+
+again, I'm not an expert.. this may or may not help you on your error..
+sorry for my english, it's not my mother tongue.
 
 
 ERRORS, QUESTIONS, TROUBLESHOOTING
