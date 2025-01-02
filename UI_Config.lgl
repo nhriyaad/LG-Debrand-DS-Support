@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="euc-kr"?>
+<LGUP>
+    <LGUP_FRAME strModelName="LG_SMARTPHONE">
+        <UI_PAGES>
+              <PROCESS strName="REFURBISH" bVisable="TRUE" bEnable="TRUE" bCheck="FALSE" bNormalProcess="TRUE" bEmergencyProcess="TRUE">
+                <POSITION nXPos="185" nYPos="255" nWidth="80"/>
+                <SUPPORT strUser ="LAB|Store|Dev|3rdParty"/>
+                <SOFTWARE_STATIC>                 
+                    <SOFTWARE_CTRL strName="BIN File" bVisable="TRUE" bEnable="TRUE" bCheck="TRUE">
+                      <FILE_TYPE strExtension="Full packages(*.tot;*.kdz)|*.tot;*.kdz||"/>
+                    </SOFTWARE_CTRL>
+                </SOFTWARE_STATIC>
+            </PROCESS>
+            <PROCESS strName="UPGRADE" bVisable="TRUE" bEnable="TRUE" bCheck="TRUE" bNormalProcess="TRUE" bEmergencyProcess="TRUE">
+                <POSITION nXPos="30" nYPos="255" nWidth="80"/>
+                <SUPPORT strUser ="LAB|Store|Dev|3rdParty"/>
+                <SOFTWARE_STATIC>
+                    <SOFTWARE_CTRL strName="BIN File" bVisable="TRUE" bEnable="TRUE" bCheck="TRUE">
+                      <FILE_TYPE strExtension="All Upgrade files (*.kdz;*.tot;*.dz)|*.kdz;*.tot;*.dz|Full packages(*.kdz;*.tot;*.dz)|*.kdz;*.tot;*.dz|"/>
+                    </SOFTWARE_CTRL>
+                </SOFTWARE_STATIC>
+            </PROCESS>
+            
+            <PROCESS strName="ChipErase" bVisable="TRUE" bEnable="TRUE" bCheck="FALSE"   bNormalProcess="TRUE" bEmergencyProcess="TRUE">
+                <POSITION nXPos="360" nYPos="255" nWidth="70"/>                
+                <SUPPORT strUser ="LAB|Store|Dev|3rdParty"/>                
+                <SOFTWARE_STATIC>
+                    <SOFTWARE_CTRL strName="BIN File" bVisable="TRUE" bEnable="TRUE" bCheck="TRUE">
+            <FILE_TYPE strExtension="Full packages(*.bin;*.tot;*.kdz)|*.bin;*.tot;*.kdz||"/>
+                    </SOFTWARE_CTRL>
+                </SOFTWARE_STATIC>
+            </PROCESS>
+
+        
+            <PROCESS strName="SCRIPT" bVisable="FALSE" bEnable="FALSE" bCheck="FALSE">
+            <POSITION nXPos="30" nYPos="285" nWidth="80"/>
+            <SUPPORT strUser =""/>
+            <SOFTWARE_STATIC>
+                <SOFTWARE_CTRL strName="SCR File" bVisable="TRUE" bEnable="TRUE" bCheck="TRUE">
+                    <FILE_TYPE strExtension="CAB/SCR Files (*.cab;*.scr)|*.cab;*.scr|CAB Files (*.cab)|*.cab|SCR files (*.scr)|*.scr||"/>
+                </SOFTWARE_CTRL>
+                <SOFTWARE_CTRL strName="PRL(NAM1)" bVisable="TRUE" bEnable="TRUE" bCheck="FALSE">
+                    <FILE_TYPE strExtension="PRL files (*.prl)|*.prl||"/>
+                </SOFTWARE_CTRL>
+            </SOFTWARE_STATIC>                    
+            </PROCESS>
+            
+            <PROCESS strName="PRL/ERI WRITE" bVisable="TRUE" bEnable="TRUE" bCheck="FALSE" bNormalProcess="TRUE" bEmergencyProcess="TRUE" bFileInputException="TRUE">
+                <POSITION nXPos="155" nYPos="285" nWidth="80"/>
+                <SUPPORT strUser ="LAB|Store|Dev|3rdParty"/>                
+                <SOFTWARE_STATIC>                    
+                    <SOFTWARE_CTRL strName="PRL(NAM1)" bVisable="TRUE" bEnable="TRUE" bCheck="FALSE">
+                        <FILE_TYPE strExtension="PRL Files (*.prl)|*.prl||"/>
+                    </SOFTWARE_CTRL>
+          <SOFTWARE_CTRL strName="ERI File" bVisable="TRUE" bEnable="TRUE" bCheck="FALSE">
+            <FILE_TYPE strExtension="ERI files (*.bin)|*.bin||"/>
+          </SOFTWARE_CTRL>
+                </SOFTWARE_STATIC>
+            </PROCESS>
+            <PROCESS strName="PRL/ERI READ" bVisable="TRUE" bEnable="TRUE" bCheck="FALSE" bNormalProcess="TRUE" bEmergencyProcess="TRUE" bFileInputException="TRUE">
+                
+                <POSITION nXPos="240" nYPos="285" nWidth="80"/>
+                <SUPPORT strUser ="LAB|Store|Dev|3rdParty"/>                
+                <SOFTWARE_STATIC>                    
+                    <SOFTWARE_CTRL strName="PRL(NAM1)" bVisable="TRUE" bEnable="TRUE" bCheck="FALSE">
+                        <FILE_TYPE strExtension="PRL Files (*.prl)|*.prl||"/>
+                    </SOFTWARE_CTRL>
+          <SOFTWARE_CTRL strName="ERI File" bVisable="TRUE" bEnable="TRUE" bCheck="FALSE">
+            <FILE_TYPE strExtension="ERI files (*.bin)|*.bin||"/>
+          </SOFTWARE_CTRL>
+                </SOFTWARE_STATIC>
+            </PROCESS>
+            <PROCESS strName="PHONESETTING" bVisable="TRUE" bEnable="TRUE" bCheck="FALSE" bFileInputException="TRUE" bNormalProcess="TRUE" bEmergencyProcess="TRUE">
+                <POSITION nXPos="360" nYPos="285" nWidth="100"/>
+                
+                <SUPPORT strUser ="LAB|Store|Dev|3rdParty"/>
+            </PROCESS>
+
+      <PROCESS strName="PARTITION DL" bVisable="TRUE" bEnable="TRUE" bCheck="FALSE" bNormalProcess="TRUE" bEmergencyProcess="TRUE">
+        <POSITION nXPos="480" nYPos="285" nWidth="100"/>
+        <SUPPORT strUser ="LAB|Store|Dev|3rdParty"/>
+        <SOFTWARE_STATIC>
+          <SOFTWARE_CTRL strName="BIN File" bVisable="TRUE" bEnable="TRUE" bCheck="TRUE">
+            <FILE_TYPE strExtension="Binaries (*.tot;*.kdz;*.img;*.bin;*.mbn;*.elf)|*.tot;*.kdz;*.img;*.bin;*.mbn;*.elf||"/>
+          </SOFTWARE_CTRL>
+        </SOFTWARE_STATIC>
+      </PROCESS>
+
+      <PROCESS strName="DUMP" bVisable="TRUE" bEnable="TRUE" bCheck="FALSE" bNormalProcess="TRUE" bEmergencyProcess="TRUE" bFileInputException="TRUE">
+        <POSITION nXPos="600" nYPos="285" nWidth="70"/>
+        <SUPPORT strUser ="LAB|Store|Dev|3rdParty"/>
+      </PROCESS>
+
+      <PROCESS strName="FOTA Upgrade" bVisable="TRUE" bEnable="TRUE" bCheck="FALSE" bNormalProcess="TRUE" bEmergencyProcess="TRUE">
+        <POSITION nXPos="720" nYPos="285" nWidth="100"/>
+        <SUPPORT strUser ="LAB|Store|Dev|3rdParty"/>
+        <SOFTWARE_STATIC>
+          <SOFTWARE_CTRL strName="BIN File" bVisable="TRUE" bEnable="TRUE" bCheck="TRUE">
+            <FILE_TYPE strExtension="Delta package (*.up;*.upc;*.zip)|*.up;*.upc;*.zip||"/>
+          </SOFTWARE_CTRL>
+        </SOFTWARE_STATIC>
+       </PROCESS>
+
+      <PROCESS strName="FAC Upgrade" bVisable="TRUE" bEnable="TRUE" bCheck="FALSE" bNormalProcess="TRUE" bEmergencyProcess="TRUE">
+        <POSITION nXPos="840" nYPos="285" nWidth="100"/>
+        <SUPPORT strUser ="LAB|Store|Dev|3rdParty"/>
+        <SOFTWARE_STATIC>
+          <SOFTWARE_CTRL strName="BIN File" bVisable="TRUE" bEnable="TRUE" bCheck="TRUE">
+            <FILE_TYPE strExtension="Full packages(*.tot;*.kdz)|*.tot;*.kdz||"/>
+          </SOFTWARE_CTRL>
+        </SOFTWARE_STATIC>
+      </PROCESS>
+
+      <PROCESS strName="BOARD DL" bVisable="TRUE" bEnable="TRUE" bCheck="FALSE" bNormalProcess="TRUE" bEmergencyProcess="TRUE">
+        <POSITION nXPos="840" nYPos="285" nWidth="100"/>
+        <SUPPORT strUser ="LAB|Store|Dev|3rdParty"/>
+        <SOFTWARE_STATIC>
+          <SOFTWARE_CTRL strName="BIN File" bVisable="TRUE" bEnable="TRUE" bCheck="TRUE">
+            <FILE_TYPE strExtension="Full packages(*.tot;*.kdz)|*.tot;*.kdz||"/>
+          </SOFTWARE_CTRL>
+        </SOFTWARE_STATIC>
+      </PROCESS>
+      
+        </UI_PAGES>
+        <UI_PROCESS>
+            <SPC_CHECK>FALSE</SPC_CHECK>
+            <LICENSE_CHECK>FALSE</LICENSE_CHECK>
+            <USE_DL_PARAM_EX>2</USE_DL_PARAM_EX>
+        </UI_PROCESS>
+    </LGUP_FRAME>
+</LGUP>
