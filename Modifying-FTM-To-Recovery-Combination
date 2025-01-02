@@ -1,0 +1,46 @@
+* I'm not responsible for bricked devices, dead SD cards, thermonuclear war, or you getting fired because the alarm app failed (like it did for me...).
+* YOU are choosing to make these modifications, and if you point the finger at me for messing up your device, I will laugh at you.
+* Your warranty will be void if you tamper with any part of your device / software.
+
+This is instruction is for carrier devices that have disabled button combo's.
+
+Prerequisites:
+1) Knowledge
+2) Unlocked bootloader
+3) Write down your IMEI and SN somewhere
+4) QPST
+
+How to check NT Code:
+1) In dialer call *#546368#*model#. Put your model number instead 'model'. Example *#546368#*500# for V500N
+2) Go SVC Menu -> Version info.
+3) Write down your NT Code
+
+Booting into EDL mode:
+1) Plug in your turned on phone to PC
+2) Press and hold Power+Volume Down
+3) As soon as your screen is blank, rapidly start pressing Volume Up.
+4) If you've successfully booted into EDL, your screen will be completely blank and the device manager will show (Under COM Ports): Qualcomm HS-USB QDLoader 9008
+
+Backing up stock FTM:
+1) Open QFIL
+2) Select build type - Flat build
+3) Storage type - UFS (Right corner at the bottom)
+4) Programmer path - choose firehose that you downloaded from attachments
+5) Go Tools->Partition Manager->OK
+6) Press right mouse button at FTM -> Manage Partition Date -> Read Data
+7) Look for backup folder in log and copy your ReadData*.bin file into another folder. Rename it to make it easier
+
+Modifying FTM:
+1) Download and install HxD
+2) Download and open ftm_.bin
+3) At the offset 0000D000 put your IMEI. You won't miss it, you'll see IMEIIMEIIMEIIME at decoded side)
+4) At the offset 00012000 put your SN. You won't miss it, you'll see SNSNSNSNSNSNSN at decoded side)
+5) At the offset 00014000 put your NT code's last number instead of both 'xx' at decoded side
+6) Flash it back. Repeat steps of backing up part, but this time choose Load Data instead of Read Data then pick your modified file.
+
+Congrats! You get back recovery button combo
+
+People who helped me with that:
+vl48
+@SGCMarkus
+@Awesomeslayerg
